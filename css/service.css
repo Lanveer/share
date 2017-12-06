@@ -1,0 +1,29 @@
+.ser-desc{
+    padding-top:10pt;
+}
+
+
+.ban>div{
+    height:50pt;
+    position: absolute;
+    bottom:0;
+    opacity:.8;
+}
+.ban-top{
+    height:30pt;
+    background: #000;
+    /*opacity:.6;*/
+    color: #fff;
+    line-height:30pt;
+    font-size: 12pt;
+    text-align: center;
+}
+.ban-down{
+    height:20pt;
+    background: #f4c444;
+    /*opacity:.8;*/
+    font-size: 10pt;
+    text-align: center;
+    line-height:20pt;
+    color: #333;
+}

@@ -1,0 +1,482 @@
+.icon-info-price{
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    vertical-align:middle;
+    margin:13pt;
+    position: relative;
+}
+.icon{
+    width:40pt;
+    height:40pt;
+    background: #ccc;
+    border-radius: 50%;
+    float: left;
+}
+.icon>img{
+    max-width:100%;
+    width:100%;
+    height:100%;
+    border-radius: 50%;
+}
+
+.info{
+    width:55%;
+    margin-left:10px;
+    float: left;
+}
+.info h1{
+    font-size:11pt;
+    color: #333;
+}
+.info span{
+    font-size: 9pt;
+    color: #666;
+    margin-right: 10px;
+}
+.price{
+    color:#f15a4a;
+    font-size: 12pt;
+    font-weight:bold;
+    position: absolute;
+    right:0;
+}
+
+.section p{
+    font-size: 10pt;
+    color: #333;
+    line-height:150%;
+    padding:0 13pt 13pt 13pt;
+
+}
+.img-box{
+    height:auto;
+    overflow: hidden;
+    margin:0 13pt 13pt 13pt;
+}
+
+.img-box img{
+    max-width:100%;
+    width:100%;
+    height:auto;
+}
+
+
+.browse-info{
+    height:44pt;
+    border-top: 1px solid #e8e8e8;
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    vertical-align: middle;
+    justify-content: space-between;
+    overflow: hidden;
+    margin:0 13pt 0 13pt;
+}
+.icons{
+    position: relative;
+}
+.icons span{
+    margin-left: 5pt;
+    color:#666666;
+    font-size: 9pt;
+}
+
+.circle-praise{
+    background:url("../imgs/common/circle_like.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-left:18px;
+}
+
+.circle-msg{
+    background:url("../imgs/common/circle_msg.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-left:18px;
+}
+.icons-a{
+    width:20pt;
+    height:20pt;
+    border-radius: 50%;
+    border:1px solid #fff;
+    background: #ccc;
+    float: left;
+    margin-left: -5pt;
+}
+.icons-a:first-child{margin-left: 0}
+.icons-a>img{
+    max-width:100%;
+    width:100%;
+    height:100%;
+    border-radius: 50%;
+}
+.icons-b{
+    /*margin-left: -5pt;*/
+}
+.icons-c{
+    /*margin-left: -5pt;*/
+}
+.browse-info span{
+
+}
+.browse{
+    /*background:url("../imgs/common/read.png");*/
+    /*background-repeat:no-repeat;*/
+    /*background-size: contain;*/
+    padding-left:20pt;
+    color: #999999;
+    font-size: 10pt;
+}
+
+
+
+/*个人开始*/
+
+.person{
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    vertical-align: middle;
+    position: relative;
+}
+
+.person-icon{
+    width: 40pt;
+    height: 40pt;
+    background: #ccc;
+    border-radius: 50%;
+    float: left;
+    margin: 10pt 13pt 10pt 13pt;
+}
+.person-icon>img{
+    width:100%;
+    height:100%;
+    border-radius: 50%;
+}
+.person>h2{
+    font-weight:normal;
+    font-size: 10pt;
+    color:#666666;
+    float: left;
+}
+
+.person>img{
+    position: absolute;
+    right:13pt;
+}
+
+/*个人结束*/
+
+
+/*下一个版块开始*/
+
+
+.detail-head{
+    height:16pt;
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    vertical-align: middle;
+    justify-content: space-between;
+    margin:13pt 13pt 5pt 13pt;
+}
+
+.detail-head h1{
+    font-size:10pt;
+    color: #666;
+    font-weight:normal;
+}
+
+.detail-body{
+    height:55pt;
+    margin:0 13pt 5pt 13pt;
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    vertical-align: middle;
+}
+.detail-body-info{
+    margin-left: 5%;
+
+}
+
+.detail-body-info>h1{
+    float: left;
+}
+.detail-body-info label{
+    display: block;
+     width:15px;
+     height:15px;
+     margin-left: 5pt;
+    float: left;
+ }
+.detail-body-info label>img{
+    max-width:100%;
+    width:100%;
+    height:100%;
+}
+.detail-body-info>h2{
+    font-size: 9pt;
+    font-weight:normal;
+    color: #333;
+    clear: both;
+}
+
+.detail-list{
+    height:85pt;
+    overflow: hidden;
+    margin:0 13pt 13pt 13pt;
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    vertical-align: middle;
+    justify-content:space-around;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.list-a{
+    width:33.333%;
+    display: flex;
+    flex-direction:column;
+    align-items:left;
+    vertical-align:middle;
+}
+.list-a>div{
+    display: flex;
+    flex-direction:row;
+    align-items:left;
+    vertical-align: middle;
+    margin-bottom: 10pt;
+}
+.list-a>div>img{
+    width:14pt;
+    height:14pt;
+}
+.list-a>div>h1{
+font-size: 10pt;
+    color:#999999;
+    font-weight:normal;
+    margin-left: 5pt;
+}
+
+.list-b{
+    border-right: 1px solid #e8e8e8;
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    vertical-align:middle;
+}
+.list-b>div{
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    vertical-align: middle;
+}
+.list-b>div h1{
+    color:#353535;
+    margin-right: 5pt;
+    font-size: 9pt;
+}
+.list-b>div span{
+    color:#f48278;
+    font-size: 9pt;
+}
+
+.list-c{
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    vertical-align:middle;
+}
+.list-c span{
+    color: #ffb32f;
+    display: block;
+    margin-bottom: 10pt;
+}
+.list-c ul li{
+    width:12pt;
+    height:12pt;
+    display:inline;
+    float: left;
+    margin-right: 2pt;
+}
+.list-c ul li img{
+    max-width:100%;
+    width:100%;
+    height:100%;
+}
+
+.detail-last{
+    height:20pt;
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    vertical-align:middle;
+    margin-bottom: 10pt;
+    justify-content:space-between;
+}
+.detail-last h1{
+    font-size: 10pt;
+    color: #666;
+    font-weight:normal;
+    margin-left: 13pt;
+    background:url("../imgs/common/location.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-left:7%;
+}
+.detail-last img{margin-right: 13pt}
+
+
+/*评论区开始*/
+.coms-header{
+    height:25pt;
+    border-bottom: 1px solid #e8e8e8;
+    margin:13pt 13pt 10pt 13pt;
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    vertical-align: middle;
+    color:#c6c6c6;
+    font-size: 10pt;
+    padding-bottom:5pt;
+}
+.coms-header h1{
+    font-size: 10pt;
+    color:#c6c6c6;
+    font-weight:normal;
+}
+.coms-header>div{
+    height:16pt;
+    width:4px;
+    border-radius: 2px;
+    color:#00d1b2;
+    background:#00d1b2;
+    margin-right: 5pt;
+}
+.coms-body{
+    height:auto;
+    overflow: hidden;
+}
+
+.coms-detail{
+    margin:0pt 13pt 0 13pt;
+}
+
+.coms-title{
+    height:40pt;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    vertical-align: middle;
+    position: relative;
+}
+
+.coms-icon{
+    width:30pt;
+    height:30pt;
+    border-radius: 50%;
+    background: #ccc;
+}
+.coms-icon img{
+    max-width:100%;
+    width:100%;
+    height:100%;
+    border-radius: 50%;
+}
+
+
+.coms-info{
+    float: left;
+    margin-left: 5px;
+}
+.coms-info>h1{
+    font-size: 10pt;
+    color:#333333;
+    font-weight:normal;
+    margin-left: 4pt;
+}
+
+.coms-info>h2{
+    font-size: 8pt;
+    color:#999999;
+    font-weight:normal;
+    margin-left: 3pt;
+}
+
+.coms-title span{
+    font-size: 9pt;
+    color: #999;
+    display: block;
+    margin-right: 5pt;
+    position: absolute;
+    right:0;
+}
+.coms-detail>p{
+    margin-left: 23pt;
+    font-size: 9pt;
+    color: #333;
+    line-height:150%;
+}
+
+.child{
+    width: 90%;
+    height:auto;
+    overflow: hidden;
+    border-left: 1px solid #f3f3f3;
+    margin-left: 35pt;
+    margin-bottom: 10px;
+}
+
+.child-top{
+    margin-left: 10px;
+    height:30px;
+    line-height:30px;
+}
+.child-top>img{
+    width:30px;
+    height:30px;
+    display: block;
+    border-radius: 50%;
+    float: left;
+    margin-right: 10px;
+}
+
+.child-top>h2{
+    font-weight:normal;
+    color:#999999;
+    font-size: 9pt;
+}
+
+.child-top>h2>span{
+    font-weight:normal;
+    color:#333333;
+    font-size: 9pt;
+}
+
+
+.child-down{
+    width:100%;
+    height:auto;
+    overflow: hidden;
+}
+
+.child-down>p{
+    font-weight:normal;
+    color:#999999;
+    font-size: 9pt;
+    margin:5px 0 5px 10px;
+    padding:0!important;
+}
+
+
+/*评论区结束*/
+
+
+
+
+/*屏幕尺寸在5s下面的时候*/
+@media screen and (min-width: 300px) and (max-width: 370px) {
+
+}

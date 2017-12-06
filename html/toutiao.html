@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>头条</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,minimal-ui">
+    <link rel="stylesheet" href="../css/basic.css">
+    <link rel="stylesheet" href="../css/cars.css">
+    <link rel="stylesheet" href="../css/toutiao.css">
+</head>
+<body>
+
+<div class="container" ng-controller="myCtrl">
+
+    <!--头部开始-->
+    <div id="header">
+        <img src="../imgs/common/navigation.png" alt="">
+    </div>
+    <!--头部开始-->
+
+    <!--微信头部开始-->
+    <div class="w-header">
+        <img src="../imgs/common/w-header'.png" alt="">
+    </div>
+    <!--微信头部结束-->
+
+    <!--版块开始-->
+    <div class="section first-section headline-section">
+        <h1 ng-bind="msg.title"></h1>
+        <div class="tou-box">
+            <span class="tou-icon1" ng-bind="msg.source"></span>
+            <span class="tou-icon2" ng-bind="msg.create_time"></span>
+            <span class="tou-icon3" ng-bind="msg.browse"></span>
+        </div>
+        <p ng-bind-html="msg.content"></p>
+        <div class="img-box">
+            <img src="{{msg.img}}" alt="">
+        </div>
+
+        <!--浏览信息开始-->
+         <div class="browse-info">
+             <div class="icons">
+                 <div class="icons-a" ng-if="wantLength>0" ng-repeat="item in wants">
+                     <img src="{{item.user_header}}" alt="">
+                 </div>
+                 <span ng-bind="'点赞' +'&nbsp;'+ msg.praise"></span>
+             </div>
+
+             <!--<div class="browse" ng-bind="msg.browse"></div>-->
+         </div>
+        <!--浏览信息结束-->
+    </div>
+
+
+    <div class="section pinglun" ng-controller="commentCtr">
+        <div class="coms-header">
+            <div></div>
+            <h1>评论</h1>·<span ng-bind="commentLength"></span>
+        </div>
+
+        <div class="coms-body">
+            <div class="coms-detail" ng-repeat="item in commentList" ng-if="flag==1">
+                <div class="coms-title">
+                    <div class="coms-icon">
+                        <img src="{{item.user_header}}" alt="">
+                    </div>
+                    <div class="coms-info">
+                        <h1 ng-bind="item.user_nickname"></h1>
+                        <h2 ng-bind="'来自'+ msg.city||'未知'"></h2>
+                    </div>
+                    <span ng-bind="item.create_time"></span>
+                </div>
+                <p ng-bind="item.comment"></p>
+
+                <div class="child" ng-repeat="pl in item.child">
+                    <div class="child-top">
+                        <img src="{{pl.user_header}}" alt="">
+                        <h2>{{pl.user_nickname.length>6 ? pl.user_nickname.substring(0,6)+'..':pl.user_nickname}}  <span>回复</span>  {{pl.receive_nickname.length > 6 ? pl.receive_nickname.substring(0,6)+ '..': pl.receive_nickname}}</h2>
+                    </div>
+                    <div class="child-down">
+                        <p ng-bind="pl.comment"></p>
+                    </div>
+                </div>
+            </div>
+            <p ng-if="flag==0">暂时没有评论</p>
+        </div>
+        <h1 class="download-tips" ng-bind="'查看全部'+ commentLength+'条评论'"></h1>
+    </div>
+
+    <!--版块结束-->
+
+    <!--微信底部开始-->
+    <div class="w-footer">
+        <img src="../imgs/common/w-footer.png" alt="">
+    </div>
+    <!--微信底部结束-->
+
+
+</div>
+
+</body>
+<script src="../libs/jquery.min.js"></script>
+<script src="../libs/angular.min.js"></script>
+<script src="../libs/angular-sanitize.min.js"></script>
+<script src="../js/basic.js"></script>
+<script src="../js/toutiao.js"></script>
+</html>

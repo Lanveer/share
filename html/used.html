@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>二手分享</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,minimal-ui">
+    <link rel="stylesheet" href="../css/basic.css">
+    <link rel="stylesheet" href="../css/cars.css">
+</head>
+<body>
+
+<div class="container" ng-controller="myCtrl">
+
+    <!--头部开始-->
+    <div id="header">
+        <img src="../imgs/common/navigation.png" alt="">
+    </div>
+    <!--头部开始-->
+
+    <!--微信头部开始-->
+    <div class="w-header">
+        <img src="../imgs/common/w-header'.png" alt="">
+    </div>
+    <!--微信头部结束-->
+
+    <!--版块开始-->
+    <div class="section first-section">
+        <div class="icon-info-price">
+            <div class="icon">
+                <img src="{{msg.header_img}}" alt="">
+            </div>
+            <div class="info">
+                <h1 ng-bind="msg.title"></h1>
+                <span ng-bind="msg.last_login"></span>
+                <!--<span>{{msg.city}} {{msg.area}}</span>-->
+                <span>{{msg.address}}</span>
+            </div>
+            <div class="price" ng-bind="'$'+msg.price"></div>
+        </div>
+        <p ng-bind="msg.introduce"></p>
+        <div class="img-box" ng-repeat="item in imgs">
+            <img src="{{item.image}}{{prefixed}}" alt="">
+        </div>
+
+        <!--浏览信息开始-->
+         <div class="browse-info">
+             <div class="icons">
+                 <div class="icons-a" ng-if="wantLength>0" ng-repeat="item in wants">
+                     <img src="{{item.user_header}}" alt="">
+                 </div>
+                 <span ng-bind="'想要' + msg.thumb"></span>
+             </div>
+
+             <div class="browse" ng-bind="'浏览  '+msg.browse"></div>
+         </div>
+        <!--浏览信息结束-->
+    </div>
+
+
+    <!--这是个人-->
+    <div class="section person" ng-if="msg.role==1">
+        <div class="person-icon">
+            <img src="{{msg.header_img}}" alt="">
+        </div>
+
+        <h2>他在简购生活发布了{{msg.count}}条信息</h2>
+
+        <img src="../imgs/common/arrow.png" alt="">
+    </div>
+    <!--这是个人-->
+
+    <!--这是商家或者是经纪人-->
+    <div class="section" ng-if="msg.role!=1">
+         <div class="detail-head">
+            <h1 ng-if="msg.role==2">商家信息</h1>
+            <h1 ng-if="msg.role==3">经纪人信息</h1>
+            <img src="../imgs/common/arrow.png" alt="">
+        </div>
+         <div class="detail-body">
+             <div class="icon">
+                 <img src="{{msg.header_img}}" alt="">
+             </div>
+
+             <div class="info detail-body-info">
+                 <h1 ng-bind="msg.nickname|| '默认名字' "></h1>
+                 <label ng-if="merchat.license==0"><img src="../imgs/common/v0.png" alt=""></label>
+                 <label ng-if="merchat.license==1"><img src="../imgs/common/v1.png" alt=""></label>
+                 <label ng-if="merchat.license==2"><img src="../imgs/common/v2.png" alt=""></label>
+                 <h2 ng-bind="merchat.en_name"></h2>
+             </div>
+         </div>
+         <div class="detail-list">
+             <div style="border-right: 1px solid #e8e8e8;" class="list-a">
+                 <div ng-if="msg.role==2">
+                     <img src="../imgs/common/jjr1.png" alt="">
+                     <h1>商家</h1>
+                 </div>
+                 <div ng-if="msg.role==3">
+                     <img src="../imgs/common/jjr1.png" alt="">
+                     <h1>经纪人</h1>
+                 </div>
+                 <div ng-if="msg.role==0">
+                     <img src="../imgs/common/jjr0.png" alt="">
+                     <h1>未知</h1>
+                 </div>
+                 <div>
+                     <img ng-if="merchat.wechat>0" src="../imgs/common/weixin1.png" alt="">
+                     <img ng-if="merchat.wechat<=0" src="../imgs/common/weixin0.png" alt="">
+                     <h1>微信</h1>
+                 </div>
+                 <div>
+                     <img ng-if="merchat.license==0" src="../imgs/common/sf0.png" alt="">
+                     <img ng-if="merchat.license==1 ||merchat.license==2" src="../imgs/common/sf1.png" alt="">
+                     <h1>身份证</h1>
+                 </div>
+             </div>
+             <div class="list-a list-b">
+                 <div>
+                     <h1>行业知识</h1>
+                     <span ng-bind="merchat.in_score"></span>
+                 </div>
+                 <div>
+                     <h1>产品质量</h1>
+                     <span ng-bind="merchat.pr_score"></span>
+                 </div>
+                 <div>
+                     <h1>服务水平</h1>
+                     <span ng-bind="merchat.se_score"></span>
+                 </div>
+             </div>
+             <div class="list-a list-c">
+                 <span ng-bind="merchat.score + '分'"></span>
+                 <ul ng-if="0<merchat.score<1.0">
+                     <li><img src="../imgs/common/star0.png" alt=""></li>
+                     <li><img src="../imgs/common/star0.png" alt=""></li>
+                     <li><img src="../imgs/common/star0.png" alt=""></li>
+                     <li><img src="../imgs/common/star0.png" alt=""></li>
+                     <li><img src="../imgs/common/star0.png" alt=""></li>
+                 </ul>
+                 <ul ng-if="merchat.score<2.0 && merchat.score>=1.0">
+                     <li><img src="../imgs/common/star1.png" alt=""></li>
+                     <li><img src="../imgs/common/star0.png" alt=""></li>
+                     <li><img src="../imgs/common/star0.png" alt=""></li>
+                     <li><img src="../imgs/common/star0.png" alt=""></li>
+                     <li><img src="../imgs/common/star0.png" alt=""></li>
+                 </ul>
+                 <ul ng-if="merchat.score<3.0 && merchat.score>=2.0">
+                     <li><img src="../imgs/common/star1.png" alt=""></li>
+                     <li><img src="../imgs/common/star1.png" alt=""></li>
+                     <li><img src="../imgs/common/star0.png" alt=""></li>
+                     <li><img src="../imgs/common/star0.png" alt=""></li>
+                     <li><img src="../imgs/common/star0.png" alt=""></li>
+                 </ul>
+                 <ul ng-if="merchat.score<4.0 && merchat.score>=3.0">
+                     <li><img src="../imgs/common/star1.png" alt=""></li>
+                     <li><img src="../imgs/common/star1.png" alt=""></li>
+                     <li><img src="../imgs/common/star1.png" alt=""></li>
+                     <li><img src="../imgs/common/star0.png" alt=""></li>
+                     <li><img src="../imgs/common/star0.png" alt=""></li>
+                 </ul>
+                 <ul ng-if="merchat.score<5.0 && merchat.score>=4.0">
+                     <li><img src="../imgs/common/star1.png" alt=""></li>
+                     <li><img src="../imgs/common/star1.png" alt=""></li>
+                     <li><img src="../imgs/common/star1.png" alt=""></li>
+                     <li><img src="../imgs/common/star1.png" alt=""></li>
+                     <li><img src="../imgs/common/star0.png" alt=""></li>
+                 </ul>
+                 <ul ng-if="merchat.score==5">
+                     <li><img src="../imgs/common/star1.png" alt=""></li>
+                     <li><img src="../imgs/common/star1.png" alt=""></li>
+                     <li><img src="../imgs/common/star1.png" alt=""></li>
+                     <li><img src="../imgs/common/star1.png" alt=""></li>
+                     <li><img src="../imgs/common/star1.png" alt=""></li>
+                 </ul>
+             </div>
+         </div>
+
+        <!--这是经济人-->
+        <div class="detail-last" ng-if="msg.role==3">
+            <h1 ng-bind="msg.address"></h1>
+            <img src="../imgs/common/arrow.png" alt="">
+        </div>
+        <!--这是经纪人-->
+
+
+    </div>
+    <!--这是商家或者是经纪人-->
+    
+    <div class="section pinglun" style="padding-bottom:41pt;" ng-controller="commentCtrl">
+        <div class="coms-header">
+            <div></div>
+            <h1>评论</h1>·<span ng-bind="commentLength"></span>
+        </div>
+
+        <div class="coms-body">
+            <div class="coms-detail" ng-repeat="item in commentList" ng-if="flag==1">
+                <div class="coms-title">
+                    <div class="coms-icon">
+                        <img src="{{item.senter_header}}" alt="">
+                    </div>
+                    <div class="coms-info">
+                        <h1 ng-bind="item.senter_nickname"></h1>
+                        <h2 ng-bind="'来自'+ msg.city"></h2>
+                    </div>
+                    <span ng-bind="item.create_time"></span>
+                </div>
+                <p ng-bind="item.comments"></p>
+
+                <div class="child" ng-repeat="pl in item.child">
+                    <div class="child-top">
+                        <img src="{{pl.senter_header}}" alt="">
+                        <h2>{{pl.senter_nickname.length>6 ? pl.senter_nickname.substring(0,6)+'..':pl.senter_nickname}}  <span>回复</span>  {{pl.receive_nickname.length > 6 ? pl.receive_nickname.substring(0,6)+ '..': pl.receive_nickname}}</h2>
+                    </div>
+                    <div class="child-down">
+                        <p ng-bind="pl.comments"></p>
+                    </div>
+                </div>
+            </div>
+            <p ng-if="flag==0">暂时没有评论</p>
+        </div>
+    </div>
+
+    <!--版块结束-->
+    <div class="" id="footer">
+        <div class="footer-left">
+            <div class="left-box left-a">
+                <img src="../imgs/common/liuyan.png" alt="">
+                <h1>留言</h1>
+            </div>
+            <div class="left-box left-b">
+                <img src="../imgs/common/shoucang.png" alt="">
+                <h1>想要</h1>
+            </div>
+            <div class="left-box left-c">
+                <img src="../imgs/common/tel.png" alt="">
+                <h1>电话</h1>
+            </div>
+        </div>
+        <div class="footer-right">询价</div>
+    </div>
+
+    <!--微信底部开始-->
+    <div class="w-footer">
+        <img src="../imgs/common/w-footer.png" alt="">
+    </div>
+    <!--微信底部结束-->
+</div>
+
+</body>
+<script src="../libs/jquery.min.js"></script>
+<script src="../libs/angular.min.js"></script>
+<script src="../js/basic.js"></script>
+<script src="../js/used.js"></script>
+</html>

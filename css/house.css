@@ -1,0 +1,14 @@
+.house-location{
+    background-image: url('../imgs/common/location.png');
+    background-repeat:no-repeat;
+    -webkit-background-size:contain;
+    background-size:contain;
+    padding-left:14pt;
+}
+.house-browse{
+    /*background-image: url('../imgs/common/read.png');*/
+    /*background-repeat:no-repeat;*/
+    /*-webkit-background-size:contain;*/
+    /*background-size:contain;*/
+    padding-left:14pt;
+}

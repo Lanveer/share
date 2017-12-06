@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>美食</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,minimal-ui">
+    <link rel="stylesheet" href="../css/basic.css">
+    <link rel="stylesheet" href="../css/cars.css">
+    <link rel="stylesheet" href="../css/service.css">
+</head>
+<body>
+
+<div class="container" ng-controller="foodCtrl">
+
+    <!--头部开始-->
+    <div id="header">
+        <img src="../imgs/common/navigation.png" alt="">
+    </div>
+    <!--头部开始-->
+
+    <!--微信头部开始-->
+    <div class="w-header">
+        <img src="../imgs/common/w-header'.png" alt="">
+    </div>
+    <!--微信头部结束-->
+
+    <!--版块开始-->
+    <div class="section first-section">
+        <div class="img-container">
+            <img src="{{msg.image}}{{prefixed}}" alt="">
+            <div class="ban">
+                <div style="height: 20pt">查看商家</div>
+                <h1 ng-bind="'共'+msg.img_count+'张'"></h1>
+            </div>
+        </div>
+
+
+        <div class="ban-box">
+            <div>
+                <h1 ng-bind="msg.title"></h1>
+                <h2 ng-bind="msg.title_en"></h2>
+            </div>
+            <!--<img src="../imgs/service/erweima.png" alt="">-->
+            <img src="{{msg.qrcode}}" alt="">
+        </div>
+
+        <div class="ban-box ban-box2">
+            <div>
+                <ul ng-if="0<msg.star<1.0">
+                    <li><img src="../imgs/common/star0.png" alt=""></li>
+                    <li><img src="../imgs/common/star0.png" alt=""></li>
+                    <li><img src="../imgs/common/star0.png" alt=""></li>
+                    <li><img src="../imgs/common/star0.png" alt=""></li>
+                    <li><img src="../imgs/common/star0.png" alt=""></li>
+                </ul>
+                <ul ng-if="msg.star<2.0 && msg.star>=1.0">
+                    <li><img src="../imgs/common/star1.png" alt=""></li>
+                    <li><img src="../imgs/common/star0.png" alt=""></li>
+                    <li><img src="../imgs/common/star0.png" alt=""></li>
+                    <li><img src="../imgs/common/star0.png" alt=""></li>
+                    <li><img src="../imgs/common/star0.png" alt=""></li>
+                </ul>
+                <ul ng-if="msg.star<3.0 && msg.star>=2.0">
+                    <li><img src="../imgs/common/star1.png" alt=""></li>
+                    <li><img src="../imgs/common/star1.png" alt=""></li>
+                    <li><img src="../imgs/common/star0.png" alt=""></li>
+                    <li><img src="../imgs/common/star0.png" alt=""></li>
+                    <li><img src="../imgs/common/star0.png" alt=""></li>
+                </ul>
+                <ul ng-if="msg.star<4.0 && msg.star>=3.0">
+                    <li><img src="../imgs/common/star1.png" alt=""></li>
+                    <li><img src="../imgs/common/star1.png" alt=""></li>
+                    <li><img src="../imgs/common/star1.png" alt=""></li>
+                    <li><img src="../imgs/common/star0.png" alt=""></li>
+                    <li><img src="../imgs/common/star0.png" alt=""></li>
+                </ul>
+                <ul ng-if="msg.star<5.0 && msg.star>=4.0">
+                    <li><img src="../imgs/common/star1.png" alt=""></li>
+                    <li><img src="../imgs/common/star1.png" alt=""></li>
+                    <li><img src="../imgs/common/star1.png" alt=""></li>
+                    <li><img src="../imgs/common/star1.png" alt=""></li>
+                    <li><img src="../imgs/common/star0.png" alt=""></li>
+                </ul>
+                <ul ng-if="msg.star==5">
+                    <li><img src="../imgs/common/star1.png" alt=""></li>
+                    <li><img src="../imgs/common/star1.png" alt=""></li>
+                    <li><img src="../imgs/common/star1.png" alt=""></li>
+                    <li><img src="../imgs/common/star1.png" alt=""></li>
+                    <li><img src="../imgs/common/star1.png" alt=""></li>
+                </ul>
+                <span style="margin-left: 6pt" ng-bind="msg.star+'分'"></span>
+            </div>
+
+            <div class="ban-box2-right">
+                <span ng-bind="msg.category_title"></span>
+            </div>
+        </div>
+
+        <div class="ban-box ban-box2" style="margin-top: 0;padding-bottom: 5pt;">
+            <div>
+                <span ng-bind="'经验' + ' ' +msg.pr_score"> </span>
+                <span ng-bind="'水平' + ' ' +msg.in_score"> </span>
+                <span ng-bind="'质量' + ' ' +msg.pr_score"> </span>
+            </div>
+             <div>
+                 <span style="margin-right: 13pt" ng-bind="msg.distance+'英里'"></span>
+             </div>
+        </div>
+
+    </div>
+
+    <div class="section ser-desc" >
+        <p ng-bind="msg.info"></p>
+        <div class="item">
+            <h1> 电话 <span ng-bind="msg.tel" style="color: #00d1b2;"></span></h1>
+            <span style="color: #31aefe" class="telephone">拨打电话</span>
+        </div>
+        <div class="item">
+            <h1> 时间 <span ng-bind="msg.open[0].first_start+ '-'+ msg.open[0].first_end + '&nbsp;' + msg.open[0].second_start+ '-'+ msg.open[0].second_end" ></span></h1>
+            <span ng-if="msg.open[0].is_close==0">歇业中</span>
+            <span ng-if="msg.open[0].is_close!=0">营业中</span>
+        </div>
+        <div class="item">
+            <h1> 地址 <span ng-bind="msg.address"></span></h1>
+        </div>
+        <!--<div class="item">-->
+        <!--<h1> 公交 <span ng-bind="msg.bus"></span></h1>-->
+        <!--</div>-->
+    </div>
+
+
+    <div class="section pinglun" ng-controller="commentCtrl">
+        <div class="coms-header">
+            <div></div>
+            <h1>评论</h1>·<span ng-bind="commentLength"></span>
+        </div>
+        <div class="comment"  ng-repeat="data in commentList">
+            <div class="comment-header">
+                <div class="comment-header-left">
+                    <div class="comment-header-left-icon">
+                        <img src="{{data.user_header}}" alt="">
+                    </div>
+                    <div class="comment-header-left-info">
+                        <h1 ng-bind="data.user_nickname"></h1>
+                        <div>
+                            <ul ng-if="0<data.score<1.0">
+                                <li><img src="../imgs/common/star0.png" alt=""></li>
+                                <li><img src="../imgs/common/star0.png" alt=""></li>
+                                <li><img src="../imgs/common/star0.png" alt=""></li>
+                                <li><img src="../imgs/common/star0.png" alt=""></li>
+                                <li><img src="../imgs/common/star0.png" alt=""></li>
+                            </ul>
+                            <ul ng-if="data.score<2.0 && data.score>=1.0">
+                                <li><img src="../imgs/common/star1.png" alt=""></li>
+                                <li><img src="../imgs/common/star0.png" alt=""></li>
+                                <li><img src="../imgs/common/star0.png" alt=""></li>
+                                <li><img src="../imgs/common/star0.png" alt=""></li>
+                                <li><img src="../imgs/common/star0.png" alt=""></li>
+                            </ul>
+                            <ul ng-if="data.score<3.0 && data.score>=2.0">
+                                <li><img src="../imgs/common/star1.png" alt=""></li>
+                                <li><img src="../imgs/common/star1.png" alt=""></li>
+                                <li><img src="../imgs/common/star0.png" alt=""></li>
+                                <li><img src="../imgs/common/star0.png" alt=""></li>
+                                <li><img src="../imgs/common/star0.png" alt=""></li>
+                            </ul>
+                            <ul ng-if="data.score<4.0 && data.score>=3.0">
+                                <li><img src="../imgs/common/star1.png" alt=""></li>
+                                <li><img src="../imgs/common/star1.png" alt=""></li>
+                                <li><img src="../imgs/common/star1.png" alt=""></li>
+                                <li><img src="../imgs/common/star0.png" alt=""></li>
+                                <li><img src="../imgs/common/star0.png" alt=""></li>
+                            </ul>
+                            <ul ng-if="data.score<5.0 && data.score>=4.0">
+                                <li><img src="../imgs/common/star1.png" alt=""></li>
+                                <li><img src="../imgs/common/star1.png" alt=""></li>
+                                <li><img src="../imgs/common/star1.png" alt=""></li>
+                                <li><img src="../imgs/common/star1.png" alt=""></li>
+                                <li><img src="../imgs/common/star0.png" alt=""></li>
+                            </ul>
+                            <ul ng-if="data.score==5">
+                                <li><img src="../imgs/common/star1.png" alt=""></li>
+                                <li><img src="../imgs/common/star1.png" alt=""></li>
+                                <li><img src="../imgs/common/star1.png" alt=""></li>
+                                <li><img src="../imgs/common/star1.png" alt=""></li>
+                                <li><img src="../imgs/common/star1.png" alt=""></li>
+                            </ul>
+                            <span ng-bind="data.score+'.0'"></span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="comment-header-right" ng-bind="data.create_time"></div>
+            </div>
+            <div class="comment-body">
+                <p class="comment-p" ng-bind="data.comments"> </p>
+                <div class="comment-imgs" ng-if="data.images.length!=0">
+                    <div style="position: relative;" ng-repeat="more in data.images">
+                        <img src="{{more.image}}{{prefixed}}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p ng-if="flag==0">暂时没有评论</p>
+
+    <!--微信底部开始-->
+    <div class="w-footer">
+        <img src="../imgs/common/w-footer.png" alt="">
+    </div>
+    <!--微信底部结束-->
+</div>
+
+</body>
+<script src="../libs/jquery.min.js"></script>
+<script src="../libs/angular.min.js"></script>
+<script src="../js/basic.js"></script>
+<script src="../js/food.js"></script>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>商家服务</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,minimal-ui">
+    <link rel="stylesheet" href="../css/basic.css">
+    <link rel="stylesheet" href="../css/cars.css">
+    <link rel="stylesheet" href="../css/shangjia.css">
+</head>
+<body>
+
+<div class="container" ng-controller="shangjiaCtrl">
+
+    <!--头部开始-->
+    <div id="header">
+        <img src="../imgs/common/navigation.png" alt="">
+    </div>
+    <!--头部开始-->
+    <!--微信头部开始-->
+    <div class="w-header">
+        <img src="../imgs/common/w-header'.png" alt="">
+    </div>
+    <!--微信头部结束-->
+
+    <!--版块开始-->
+    <div class="section first-section">
+         <div class="sj-left"><img src="{{msg.license}}{{prefixed}}" alt=""></div>
+         <div class="sj-right">
+             <div>
+                 <h1 ng-bind="msg.zh_name"></h1>
+                 <img ng-if="msg.status==0" src="../imgs/common/v0.png" alt="">
+                 <img ng-if="msg.status==1" src="../imgs/common/v1.png" alt="">
+                 <img ng-if="msg.status==2" src="../imgs/common/v2.png" alt="">
+             </div>
+
+             <h2 ng-bind="msg.en_name"></h2>
+
+             <div>
+                 <ul ng-if="0<msg.score<1.0">
+                     <li><img src="../imgs/common/star0.png" alt=""></li>
+                     <li><img src="../imgs/common/star0.png" alt=""></li>
+                     <li><img src="../imgs/common/star0.png" alt=""></li>
+                     <li><img src="../imgs/common/star0.png" alt=""></li>
+                     <li><img src="../imgs/common/star0.png" alt=""></li>
+                 </ul>
+                 <ul ng-if="msg.score<2.0 && msg.score>=1.0">
+                     <li><img src="../imgs/common/star1.png" alt=""></li>
+                     <li><img src="../imgs/common/star0.png" alt=""></li>
+                     <li><img src="../imgs/common/star0.png" alt=""></li>
+                     <li><img src="../imgs/common/star0.png" alt=""></li>
+                     <li><img src="../imgs/common/star0.png" alt=""></li>
+                 </ul>
+                 <ul ng-if="msg.score<3.0 && msg.score>=2.0">
+                     <li><img src="../imgs/common/star1.png" alt=""></li>
+                     <li><img src="../imgs/common/star1.png" alt=""></li>
+                     <li><img src="../imgs/common/star0.png" alt=""></li>
+                     <li><img src="../imgs/common/star0.png" alt=""></li>
+                     <li><img src="../imgs/common/star0.png" alt=""></li>
+                 </ul>
+                 <ul ng-if="msg.score<4.0 && msg.score>=3.0">
+                     <li><img src="../imgs/common/star1.png" alt=""></li>
+                     <li><img src="../imgs/common/star1.png" alt=""></li>
+                     <li><img src="../imgs/common/star1.png" alt=""></li>
+                     <li><img src="../imgs/common/star0.png" alt=""></li>
+                     <li><img src="../imgs/common/star0.png" alt=""></li>
+                 </ul>
+                 <ul ng-if="msg.score<5.0 && msg.score>=4.0">
+                     <li><img src="../imgs/common/star1.png" alt=""></li>
+                     <li><img src="../imgs/common/star1.png" alt=""></li>
+                     <li><img src="../imgs/common/star1.png" alt=""></li>
+                     <li><img src="../imgs/common/star1.png" alt=""></li>
+                     <li><img src="../imgs/common/star0.png" alt=""></li>
+                 </ul>
+                 <ul ng-if="msg.score==5">
+                     <li><img src="../imgs/common/star1.png" alt=""></li>
+                     <li><img src="../imgs/common/star1.png" alt=""></li>
+                     <li><img src="../imgs/common/star1.png" alt=""></li>
+                     <li><img src="../imgs/common/star1.png" alt=""></li>
+                     <li><img src="../imgs/common/star1.png" alt=""></li>
+                 </ul>
+                 <span ng-bind="msg.score+'分'"></span>
+             </div>
+         </div>
+    </div>
+
+     <div class="section">
+         <div class="list">
+             <h1>中文名称： <span ng-bind="msg.zh_name"></span></h1>
+         </div>
+         <div class="list">
+             <h1>英文全称： <span ng-bind="msg.en_name"></span></h1>
+         </div>
+         <div class="list">
+             <h1>&nbsp;联&nbsp;系&nbsp;人： <span ng-bind="msg.contact"></span></h1>
+         </div>
+         <div class="list">
+             <h1>联系电话： <span ng-bind="msg.tel"></span></h1>
+             <img src="../imgs/shangjia/tel.png" alt="">
+         </div>
+     </div>
+
+
+     <div class="section sj-info">
+         <div class="coms-header">
+             <div></div>
+             <h1>商家介绍</h1>
+         </div>
+         <p ng-bind="msg.info"></p>
+     </div>
+
+
+    <!--微信底部开始-->
+    <div class="w-footer">
+        <img src="../imgs/common/w-footer.png" alt="">
+    </div>
+    <!--微信底部结束-->
+
+    <!--版块结束-->
+</div>
+
+</body>
+<script src="../libs/jquery.min.js"></script>
+<script src="../libs/angular.min.js"></script>
+<script src="../js/basic.js"></script>
+<script src="../js/shangjia.js"></script>
+</html>

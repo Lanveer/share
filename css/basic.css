@@ -1,0 +1,534 @@
+*{
+    margin:0;
+    padding:0;
+    font-family:PingFangSC-Regular,sans-serif!important;
+}
+
+body{
+    background: #f3f3f3;
+}
+
+
+ul>li{
+    list-style: none;
+}
+.container{
+    max-width:800px;
+    width:100%;
+    height:auto;
+    overflow: hidden;
+    margin:auto;
+}
+
+
+/*在微信浏览器下面*/
+
+.w-container{
+    max-width:800px;
+    width:100%;
+    height:auto;
+    overflow: hidden;
+    margin:auto;
+}
+
+.w-header img{
+    max-width:100%;
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}
+
+.w-footer{
+    height:100pt;
+    width:100%;
+    background:#f3f3f3;
+    z-index:999;
+    display: none;
+}
+.w-footer>img{
+    display: block;
+    width:54.66666%;
+    height:auto;
+    margin:5% auto;
+}
+
+
+
+/*屏幕尺寸在5s下面的时候*/
+@media screen and (min-width: 300px) and (max-width: 370px) {
+    #header{
+        height:50pt;
+        position: fixed;
+        top:0;
+        z-index:999;
+    }
+    .w-header{
+        height:40pt;
+        position: fixed;
+        top:0;
+        z-index:999;
+        display: none;
+    }
+    .first-section{
+        padding-top: 50pt;
+    }
+    .article-content>div>p>img{
+        max-width:100%;
+        width:100%;
+        height:auto;
+    }
+/*div>img{*/
+    /*max-width:100%;*/
+    /*width:100%;*/
+    /*height:auto;*/
+/*}*/
+
+
+}
+/*屏幕尺寸在6下面的时候*/
+@media screen and (min-width: 374px) and (max-width: 410px) {
+    #header{
+        height:55pt;
+        position: fixed;
+        top:0;
+        z-index:999;
+    }
+    .w-header{
+        height:49pt;
+        position: fixed;
+        top:0;
+        z-index:999;
+        display: none;
+    }
+    .first-section{
+        padding-top: 55pt;
+    }
+}
+
+/*屏幕尺寸在6p下面的时候*/
+@media screen and (min-width: 410px) and (max-width: 420px){
+    #header{
+        height:65pt;
+        position: fixed;
+        top:0;
+        z-index:999;
+    }
+    .w-header{
+        height:51pt;
+        position: fixed;
+        top:0;
+        z-index:999;
+        display: none;
+    }
+    .first-section{
+        padding-top: 65pt;
+    }
+}
+
+/*屏幕尺寸在其他设备上下面的时候*/
+@media screen and (min-width: 420px){
+    #header{
+        max-width:800px;
+        width:100%;
+        height:60pt;
+        overflow: hidden;
+        position: fixed;
+        top:0;
+        z-index:999;
+    }
+    .w-header{
+        max-width:800px;
+        width:100%;
+        height:65pt;
+        overflow: hidden;
+        position: fixed;
+        top:0;
+        z-index:999;
+        display: none;
+    }
+    .first-section{
+        padding-top: 65pt;
+    }
+}
+
+
+#header img{
+    max-width:100%;
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}
+
+.section{
+    height:auto;
+    overflow: hidden;
+    background: #fff;
+    margin-bottom: 10px;
+}
+
+#footer{
+    max-width:800px;
+    height:37pt;
+    position: fixed;
+    bottom:0;
+    width:100%;
+    z-index:999;
+}
+.footer-left{
+    width:68%;
+    height:100%;
+    float: left;
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    vertical-align: middle;
+    justify-content:space-around;
+    border-top: 1px solid #e8e8e8;
+    background: #fff;
+}
+.left-box{
+
+}
+
+.left-box img{
+    width:20px;
+    height:18px;
+}
+
+.left-box  h1{
+    font-weight:normal;
+    font-size: 9pt;
+    color: #666;
+    text-align: center;
+}
+.left-a>img{
+    width:20px;
+    height:17px;
+}
+.left-b>img{
+    width:20px;
+    height:18px;
+}
+.left-c>img{
+    width:20px;
+    height:17px;
+}
+
+
+.footer-right{
+    width:32%;
+    height:100%;
+    float: right;
+    background:#00d1b2;
+    font-size: 12pt;
+    color: #fff;
+    font-weight:normal;
+    text-align: center;
+    line-height:35pt;
+}
+
+/*服务类型的公共提取部分开始*/
+
+.img-container{
+    position: relative;
+    height:150pt;
+}
+.img-container>img{
+    max-width:100%;
+    width:100%;
+    height:100%;
+    position: relative;
+    z-index:22;
+}
+.ban{
+    height:25pt;
+    width:100%;
+    position: absolute;
+    bottom:15pt;
+    z-index:66;
+}
+.ban>div{
+    width:50pt;
+    height:20pt;
+    background: #f8cb51;
+    color:#353535;
+    font-size: 9pt;
+    line-height:20pt;
+    text-align: center;
+    margin-left: 13pt;
+    float: left;
+    border-radius: 5px;
+}
+
+.ban>h1{
+    font-size: 10pt;
+    color: #fff;
+    font-weight:normal;
+    padding-left:15pt;
+    background-image: url('../imgs/service/camera.png');
+    background-repeat:no-repeat;
+    background-size:contain;
+    padding-left:20pt;
+    position: absolute;
+    bottom:0;
+    right:13pt;
+}
+
+.ban-box{
+    height:40pt;
+    margin-top: 15pt;
+    display: flex;
+    flex-direction:row;
+    /*align-items:center;*/
+    /*vertical-align: middle;*/
+    justify-content:space-between;
+}
+.ban-box>div{
+    margin-left: 13pt;
+}
+.ban-box>div>h1{
+    font-size: 10pt;
+    color: #333;
+}
+
+.ban-box>div>h2{
+    font-size: 10pt;
+    color: #333;
+    margin-top: 4px;
+    font-weight:normal;
+}
+.ban-box>img{
+    width:40pt;
+    height:40pt;
+    margin-right: 13pt;
+}
+.ban-box>div>span{
+    font-size: 9pt;
+    color: #999;
+    margin-right: 13pt;
+}
+
+.ban-box2{
+    height:20pt;
+    margin-top: 5pt;
+}
+.ban-box2>div>ul{
+    float: left;
+    /*margin-right: 4pt;*/
+}
+.ban-box2>div>ul>li{
+    display: inline-block;
+    width:12pt;
+    height:12pt;
+    /*background: #000;*/
+    overflow: hidden;
+    color: #fff;
+    line-height:12pt;
+    margin-top: 4pt;
+    margin-right: -3pt;
+}
+.ban-box2>div>ul>li>img{
+    max-width:100%;
+    width:100%;
+    height:auto;
+}
+.ban-box2>div>span{
+    float: left;
+    font-size: 9pt;
+    color:#a9a9a9;
+
+}
+.ban-box2>div{
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    vertical-align: middle;
+}
+
+
+.ban-box2-right{
+    /*margin-right: 13pt;*/
+}
+.ban-box2-right>span{
+    /*margin-left: 5pt;*/
+}
+
+.item{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items: center;
+    vertical-align:middle;
+    margin-bottom: 10pt;
+    color: #666666;
+}
+.item>h1{
+    font-size: 10pt;
+    color:#666666;
+    font-weight:normal;
+    margin-left: 13pt;
+}
+.item>h1>span{
+    color: #999;
+    margin-left: 10px;
+}
+.item>span{
+    color:#00d1b2;
+    margin-right: 13pt;
+    font-size: 10pt;
+}
+
+.comment{
+    overflow: hidden;
+    width:92%;
+    margin:10px auto 0;
+    padding-bottom:10px;
+    border-bottom: 1px solid #f3f3f3;
+}
+.comment:last-child{
+    border-bottom: none;
+}
+.comment-header{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    vertical-align:middle;
+    /*margin-left: 13pt;*/
+}
+
+.comment-body{
+    width:85%;
+    height: auto;
+    overflow: hidden;
+    float: left;margin-left: 38pt;
+}
+
+
+.comment-header-left{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    vertical-align:middle;
+}
+.comment-header-left-icon{
+    width:30pt;
+    height:30pt;
+    border-radius: 50%;
+    background: #ccc;
+}
+.comment-header-left-icon>img{
+    max-width:100%;
+    width:100%;
+    height:100%;
+    border-radius: 50%;
+}
+
+.comment-header-left-info{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:left;
+    vertical-align:middle;
+    margin-left: 5px;
+}
+.comment-header-left-info>h1{
+    font-size: 11pt;
+    color: #333333;
+    margin-left: 5pt;
+    font-weight:normal;
+}
+
+.comment-header-left-info>div>ul{
+    margin:2pt 0 0 5pt;}
+.comment-header-left-info>div>ul>li{
+    width:12pt;
+    height:12pt;
+    line-height:12pt;
+    text-align: center;
+    margin-left: -3pt;
+    display: inline-block;
+}
+.comment-header-left-info>div>ul>li>img{
+    max-width:100%;
+    width:100%;
+    height:100%;
+}
+
+.comment-header-left-info>div{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    vertical-align:middle;
+}
+.comment-header-left-info>div>span{
+    font-size: 9pt;
+    color: #999999;
+    margin-left: 4pt;
+}
+.comment-header-right{
+    /*margin-right: 13pt;*/
+    font-size: 10pt;
+    color:#999;
+}
+
+.comment-p{
+    margin-top: 5pt;
+    padding:0 10px 0 0px !important;
+    line-height: 180%!important;
+    font-size: 9pt!important;
+}
+.comment-imgs{
+    height:80px;
+    margin:5px 10px 0 0px;
+    border-bottom: 1px solid #e8e8e8;
+    align-items:center;
+    vertical-align:middle;
+    overflow: hidden;
+}
+.comment-imgs:last-child{
+    border-bottom: none;
+}
+
+.comment-imgs>p{
+    font-size: 10pt;
+    text-align: center;
+    color: #333;
+    font-weight:normal;
+}
+.comment-imgs>div{
+    width:70px;
+    height:70px;
+    float: left;
+    margin: 5px 10px 5px 0;
+}
+.comment-imgs>div>img{
+    max-width:100%;
+    width:100%;
+    height: 100%;
+}
+.comment-mask{
+    width:45%;
+    height:15pt;
+    position: absolute;
+    bottom:10pt;
+    right:0;
+    background:#000;
+    opacity:.4;
+    font-size: 9pt;
+    color: #fff;
+    text-align: center;
+    line-height:15pt;
+}
+
+.download-tips{
+    text-align: center;
+    font-size: 10pt;
+    color: #00d1b2;
+    font-weight:normal;
+    padding:10pt 0 10pt 0;
+}
+
+/*服务类型的公共提取部分结束*/

@@ -1,0 +1,50 @@
+.first-section>h1{
+    font-size: 13pt;
+    font-weight:normal;
+    color:#353535;
+    margin:13pt 13pt 5pt 13pt;
+
+}
+.headline-section p{
+    padding: 0 5px 13pt 5px!important;
+}
+.headline-section p div>img{
+    width:95%;
+    display: block;
+    margin:auto;
+}
+.tou-box{
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    vertical-align: middle;
+    margin-left: 13pt;
+    margin-bottom: 13pt;
+}
+
+.tou-box>span{
+    font-size: 9pt;
+    color: #999;
+    margin-right: 10pt;
+}
+.tou-icon1{
+    background-image: url("../imgs/common/person.png");
+    background-repeat:no-repeat;
+    -webkit-background-size:contain;
+    background-size:contain;
+    padding-left:15pt;
+}
+.tou-icon2{
+    background-image: url("../imgs/common/time.png");
+    background-repeat:no-repeat;
+    -webkit-background-size:contain;
+    background-size:contain;
+    padding-left:15pt;
+}
+.tou-icon3{
+    background-image: url("../imgs/common/read.png");
+    background-repeat:no-repeat;
+    -webkit-background-size:contain;
+    background-size:contain;
+    padding-left:15pt;
+}

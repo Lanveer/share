@@ -1,0 +1,33 @@
+.circle-icon-info-price>span{
+    font-size: 9pt;
+    color: #999;
+}
+.circle-info>h1{
+    /*background-image: url(../imgs/common/boy.png);*/
+    /*background-repeat:no-repeat;*/
+    /*background-position: 30% 0;*/
+    /*-webkit-background-size:contain;*/
+    /*background-size:contain;*/
+}
+.circle-info{
+
+}
+.circle-info>h1{
+    float: left;
+}
+
+.circle-info>img{
+    float: left;
+    width:12pt;
+    height:12pt;
+    margin-left: 5pt;
+    margin-top: 2pt;
+}
+.circle-info>span{
+    clear: both;
+    display: block;
+}
+.circle-date{
+    position: absolute;
+    right:0;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>优惠</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,minimal-ui">
+    <link rel="stylesheet" href="../css/basic.css">
+    <link rel="stylesheet" href="../css/cars.css">
+    <link rel="stylesheet" href="../css/youhui.css">
+</head>
+<body>
+
+<div class="container" ng-controller="myCtrl" style="display: block;">
+    <!--头部开始-->
+    <div id="header">
+        <img src="../imgs/common/navigation.png" alt="">
+    </div>
+    <!--头部开始-->
+
+    <!--微信头部开始-->
+    <div class="w-header">
+        <img src="../imgs/common/w-header'.png" alt="">
+    </div>
+    <!--微信头部结束-->
+
+    <!--版块开始-->
+    <div class="section first-section">
+        <h1 ng-bind="msg.title"></h1>
+
+        <h2>店铺地址</h2>
+        <p ng-bind="msg.address"></p>
+
+        <h2>联系方式</h2>
+        <p ng-bind="msg.tel"></p>
+
+        <h2>使用说明</h2>
+        <p ng-bind="msg.info"></p>
+        
+        <div class="img-box">
+            <img src="{{images}}{{prefixed}}" alt="">
+        </div>
+        <div class="add">添加到卡包</div>
+    </div>
+    <!--版块结束-->
+
+    <!--微信底部开始-->
+    <div class="w-footer">
+        <img src="../imgs/common/w-footer.png" alt="">
+    </div>
+    <!--微信底部结束-->
+</div>
+
+<!--<div class="w-container" ng-controller="w-myCtrl" style="display: none;">-->
+
+    <!--&lt;!&ndash;微信头部开始&ndash;&gt;-->
+    <!--<div class="w-header">-->
+        <!--<img src="../imgs/common/w-header'.png" alt="">-->
+    <!--</div>-->
+    <!--&lt;!&ndash;微信头部结束&ndash;&gt;-->
+
+    <!--&lt;!&ndash;版块开始&ndash;&gt;-->
+    <!--<div class="section first-section">-->
+        <!--<h1 ng-bind="msg.title"></h1>-->
+
+        <!--<h2>店铺地址</h2>-->
+        <!--<p ng-bind="msg.address"></p>-->
+
+        <!--<h2>联系方式</h2>-->
+        <!--<p ng-bind="msg.tel"></p>-->
+
+        <!--<h2>使用说明</h2>-->
+        <!--<p ng-bind="msg.info"></p>-->
+
+        <!--<div class="img-box">-->
+            <!--<img src="{{images}}" alt="">-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--&lt;!&ndash;版块结束&ndash;&gt;-->
+
+    <!--&lt;!&ndash;微信底部开始&ndash;&gt;-->
+    <!--<div class="w-footer">-->
+        <!--<img src="../imgs/common/w-footer.png" alt="">-->
+    <!--</div>-->
+    <!--&lt;!&ndash;微信底部结束&ndash;&gt;-->
+<!--</div>-->
+</body>
+<script src="../libs/jquery.min.js"></script>
+<script src="../libs/angular.min.js"></script>
+<script src="../libs/base64.js"></script>
+<script src="../js/basic.js"></script>
+<script src="../js/youhui.js"></script>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>玩转积分</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,minimal-ui">
+    <link rel="stylesheet" href="../css/basic.css">
+    <style>
+        .detail{
+            width:100%;
+            position: absolute;
+            top:0;
+            overflow: hidden;
+            background-image: url("../imgs/jifen/integral.png");
+            background-size: 100%;
+            background-repeat:no-repeat;
+            padding-bottom:28%;
+        }
+        .rule{
+            width:78%;
+            height:300px;
+            overflow-y: auto;
+            margin:75% auto 0;
+        }
+        .rule>h1{
+             font-size: 18px;
+            color: #333;
+            margin: 15px 0 10px 0;
+        }
+        .rule>p{
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="detail">
+            <div class="rule">
+                <h1>积分获取</h1>
+                <p>1、注册并登陆，一次性任务30积分奖励</p>
+                <p>2、完善基本信息，让大家更好的认识你可获30
+                    积分奖励 </p>
+                <p>3、每天签到一次，连续签到积分可叠加，最高
+                    可以获7积分奖励</p>
+                <p>4、推广APP，进入“我的推广”分享推广链接就
+                    可获得22积分奖励</p>
+                <p>5、发布消息，任意版块发布消息就可获得7积
+                    分奖励</p>
+                <p>
+                    6、热爱分享，有趣的信息分享出去也可获得7
+                    积分奖励
+                    7、喜欢的要多鼓励，留点印记写个评论可获得
+                    7积分奖励</p>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../libs/jquery.min.js"></script>
+<script>
+    $(function () {
+        $('.detail').css({
+            height:$(window).height()+'px'
+        })
+    })
+</script>
+</html>

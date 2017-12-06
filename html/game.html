@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>游戏详情</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,minimal-ui">
+    <link rel="stylesheet" href="../css/basic.css">
+    <link rel="stylesheet" href="../css/cars.css">
+    <link rel="stylesheet" href="../css/game.css">
+</head>
+<body>
+
+<div class="container" ng-controller="gameCtrl">
+    <h1>店铺名字</h1>
+    <h2 ng-bind="msg.zh_name"></h2>
+
+    <div class="game-box">
+        <img src="../imgs/game/wheel.png" alt="">
+    </div>
+
+
+    <div class="game-input">
+        <img src="../imgs/game/box.png" alt="">
+        <div class="game-rule" ng-bind="msg.info"></div>
+    </div>
+
+
+    <div class="btn"></div>
+</div>
+
+</body>
+<script src="../libs/jquery.min.js"></script>
+<script src="../libs/angular.min.js"></script>
+<script src="../js/basic.js"></script>
+<script src="../js/game.js"></script>
+</html>

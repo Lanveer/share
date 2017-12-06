@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>圈子分享页</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,minimal-ui">
+    <link rel="stylesheet" href="../css/basic.css">
+    <link rel="stylesheet" href="../css/cars.css">
+    <link rel="stylesheet" href="../css/circle.css">
+</head>
+<body>
+
+<div class="container" ng-controller="circleCtrl">
+
+    <!--头部开始-->
+    <div id="header">
+        <img src="../imgs/common/navigation.png" alt="">
+    </div>
+    <!--头部开始-->
+
+    <!--微信头部开始-->
+    <div class="w-header">
+        <img src="../imgs/common/w-header'.png" alt="">
+    </div>
+    <!--微信头部结束-->
+
+    <!--版块开始-->
+    <div class="section first-section">
+        <div class="icon-info-price circle-icon-info-price">
+            <div class="icon">
+                <img src="{{msg.header_img}}" alt="">
+            </div>
+            <div class="info circle-info">
+                <h1 ng-bind="msg.nickname" style="margin-bottom: 5px;"></h1>
+                <img ng-if="msg.sex==1" src="../imgs/common/boy.png" alt="">
+                <img ng-if="msg.sex==0" src="../imgs/common/girl.png" alt="">
+                <span ng-bind="msg.address"></span>
+            </div>
+            <span ng-bind="msg.create_time" class="circle-date"></span>
+        </div>
+        <p ng-bind="msg.content"></p>
+        <div class="img-box" ng-repeat="idx in msg.images" style="margin: 0 13pt 5pt 13pt;;">
+            <img src="{{idx.image}}{{prefixed}}" alt="">
+        </div>
+
+        <!--浏览信息开始-->
+         <div class="browse-info" style="border-top: none;height: 30pt;">
+             <div class="icons">
+                 <span class="circle-praise" ng-bind="msg.did_praised"> 12</span>
+                 <span class="circle-msg" ng-bind="msg.comment_num">12</span>
+             </div>
+
+             <div class="browse" ng-bind="'浏览' + msg.browse"></div>
+         </div>
+        <!--浏览信息结束-->
+    </div>
+
+
+    <div class="section pinglun" ng-controller="commentCtrl">
+        <div class="coms-header">
+            <div></div>
+            <h1>评论</h1> · <span ng-bind="msg.comment_num"></span>
+        </div>
+
+        <div class="coms-body">
+            <div class="coms-detail" ng-repeat="item in commentList" ng-if="flag==1">
+                <div class="coms-title">
+                    <div class="coms-icon">
+                        <img src="{{item.user_header}}" alt="">
+                    </div>
+                    <div class="coms-info">
+                        <h1 ng-bind="item.user_nickname"></h1>
+                        <h2 ng-bind="'来自'+ msg.city"></h2>
+                    </div>
+                    <span ng-bind="item.create_time"></span>
+                </div>
+                <p ng-bind="item.comment"></p>
+            </div>
+            <p ng-if="flag==0">暂时没有评论</p>
+        </div>
+        <h1 class="download-tips" style="border-top:  1px solid #f3f3f3" ng-bind="'查看全部'+msg.comment_num+'条评论'"></h1>
+    </div>
+
+    <!--版块结束-->
+
+    <!--微信底部开始-->
+    <div class="w-footer">
+        <img src="../imgs/common/w-footer.png" alt="">
+    </div>
+    <!--微信底部结束-->
+</div>
+
+</body>
+<script src="../libs/jquery.min.js"></script>
+<script src="../libs/angular.min.js"></script>
+<script src="../js/basic.js"></script>
+<script src="../js/circle.js"></script>
+</html>
