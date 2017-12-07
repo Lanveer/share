@@ -40,7 +40,8 @@
                 <h1 ng-bind="msg.zh_name"></h1>
                 <h2 ng-bind="msg.en_name"></h2>
             </div>
-            <img src="{{msg.qrcode}}" alt="">
+            <!--<img src="{{msg.qrcode}}" alt="">-->
+            <img src="../imgs/service/erweima.png" alt="">
         </div>
 
         <div class="ban-box ban-box2">
@@ -87,7 +88,7 @@
                     <li><img src="../imgs/common/star1.png" alt=""></li>
                     <li><img src="../imgs/common/star1.png" alt=""></li>
                 </ul>
-                <span style="margin-left: 5pt" ng-bind="msg.score+'分'"></span>
+                <span style="margin-left: 5pt" ng-bind="msg.mc_count+'条'"></span>
             </div>
 
             <div class="ban-box2-right">
@@ -97,8 +98,8 @@
 
         <div class="ban-box ban-box2" style="margin-top: 0;padding-bottom: 5pt;">
             <div>
-                <span ng-bind="'经验' + ' ' +msg.pr_score"> </span>
-                <span ng-bind="'水平' + ' ' +msg.in_score"> </span>
+                <span ng-bind="'经验' + ' ' +msg.score"> </span>
+                <span ng-bind="'水平' + ' ' +msg.se_score"> </span>
                 <span ng-bind="'质量' + ' ' +msg.pr_score"> </span>
             </div>
              <div>

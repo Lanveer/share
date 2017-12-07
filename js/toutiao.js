@@ -21,7 +21,7 @@ var data={
     auth_name:re.auth_name,
     tx:re.tx
 };
-
+//
 // var data={
 //     headline_id:93720,
 //     user_id:1397,

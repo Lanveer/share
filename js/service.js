@@ -21,7 +21,7 @@ var data={
 // var data={
 //     shop_id:12,
 //     user_id:1397,
-//     lng:104.068136,
+//     lng:103.068135,
 //     lat:30.546968,
 //     auth_name:'name',
 //     name:1,
