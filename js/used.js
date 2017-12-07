@@ -12,24 +12,24 @@ var commentUrl=baseUrl+'magor/five/comments';
 url = window.location.href;
 str =url;
 re = getQueryString(str);
-//
-// var data={
-//     id:re.id,
-//     grand_id:1,
-//     user_id:re.user_id,
-//     info_id:re.id,
-//     tx:re.tx,
-//     auth_name:re.auth_name,
-// };
 
 var data={
-    id:100015,
+    id:re.id,
     grand_id:1,
-    user_id:1397,
-    auth_name:'name',
-    name:1,
-    tx:'3f556f66353c5945a3633ae209a3e0ff'
+    user_id:re.user_id,
+    info_id:re.id,
+    tx:re.tx,
+    auth_name:re.auth_name,
 };
+
+// var data={
+//     id:100081,
+//     grand_id:1,
+//     user_id:1402,
+//     auth_name:'name',
+//     name:1,
+//     tx:'3f556f66353c5945a3633ae209a3e0ff'
+// };
 
 // 判断下载设备
 $('#footer,#header').click(function(){

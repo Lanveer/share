@@ -12,22 +12,22 @@ url = window.location.href;
 str =url;
 re = getQueryString(str);
 
-// var data={
-//     id:re.id,
-//     grand_id:3,
-//     user_id:re.user_id,
-//     auth_name:re.auth_name,
-//     tx:re.tx
-// };
-
 var data={
-    id:7205,
+    id:re.id,
     grand_id:3,
-    user_id:1397,
-    auth_name:'name',
-    name:1,
-    tx:'3f556f66353c5945a3633ae209a3e0ff'
+    user_id:re.user_id,
+    auth_name:re.auth_name,
+    tx:re.tx
 };
+
+// var data={
+//     id:7216,
+//     grand_id:3,
+//     user_id:1402,
+//     auth_name:'name',
+//     name:1,
+//     tx:'3f556f66353c5945a3633ae209a3e0ff'
+// };
 
 // 判断下载设备
 $('#header,#footer').click(function(){

@@ -30,7 +30,7 @@
                 <img src="{{msg.header_img}}" alt="">
             </div>
             <div class="info">
-                <h1 ng-bind="msg.title"></h1>
+                <h1 ng-bind="msg.nickname"></h1>
                 <span ng-bind="msg.last_login"></span>
                 <!--<span>{{msg.city}} {{msg.area}}</span>-->
                 <span>{{msg.address}}</span>
@@ -79,12 +79,18 @@
              <div class="icon">
                  <img src="{{msg.header_img}}" alt="">
              </div>
-
+             <!--<div class="info detail-body-info">-->
+                 <!--<h1 ng-bind="msg.nickname|| '默认名字' "></h1>-->
+                 <!--<label ng-if="merchat.license==0"><img src="../imgs/common/v0.png" alt=""></label>-->
+                 <!--<label ng-if="merchat.license==1"><img src="../imgs/common/v1.png" alt=""></label>-->
+                 <!--<label ng-if="merchat.license==2"><img src="../imgs/common/v2.png" alt=""></label>-->
+                 <!--<h2 ng-bind="merchat.en_name"></h2>-->
+             <!--</div>-->
              <div class="info detail-body-info">
                  <h1 ng-bind="msg.nickname|| '默认名字' "></h1>
-                 <label ng-if="merchat.license==0"><img src="../imgs/common/v0.png" alt=""></label>
-                 <label ng-if="merchat.license==1"><img src="../imgs/common/v1.png" alt=""></label>
-                 <label ng-if="merchat.license==2"><img src="../imgs/common/v2.png" alt=""></label>
+                 <label ng-if="merchat.license!=2"><img src="../imgs/common/v0.png" alt=""></label>
+                 <label ng-if="merchat.license==2 && msg.role==2"><img src="../imgs/common/v1.png" alt=""></label>
+                 <label ng-if="merchat.license==2 && msg.role==3"><img src="../imgs/common/v2.png" alt=""></label>
                  <h2 ng-bind="merchat.en_name"></h2>
              </div>
 
@@ -177,7 +183,7 @@
 
             <!--这是经济人-->
             <div class="detail-last" ng-if="msg.role==3">
-                <h1 ng-bind="msg.address"></h1>
+                <h1 ng-bind="msg.merchant.address"></h1>
                 <img src="../imgs/common/arrow.png" alt="">
             </div>
             <!--这是经纪人-->
