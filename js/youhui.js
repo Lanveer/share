@@ -26,7 +26,7 @@ var data={
 
 var detailData={
     privilege_id:re.privilege_id,
-    user_id:re.privilege_id,
+    user_id:re.user_id,
     auth_name:re.auth_name,
     tx:re.tx
 };
