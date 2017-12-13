@@ -18,8 +18,8 @@ var data={
 
 
 // var data={
-//     circle_id:2678,
-//     user_id:1397,
+//     circle_id:2702,
+//     user_id:1402,
 //     auth_name:'name',
 //     name:1,
 //     tx:'3f556f66353c5945a3633ae209a3e0ff'

@@ -18,13 +18,20 @@ $('.btn').click(function(){
 
 //详情url
 var detailUrl= baseUrl+'game/game/shopgame';
+//tokenUrl
+var tokenUrl= baseUrl+'newprivilege/privilege/token';
+
+var addUrl=baseUrl+'newprivilege/privilege/add';
+
+url = window.location.href;
+str =url;
+re = getQueryString(str);
 
 var data={
     food_id:re.food_id,
     auth_name:re.auth_name,
     tx:re.tx
 }
-
 
 var app= angular.module('myApp',[]);
 app.controller('gameCtrl',function ($scope,$http) {
@@ -44,4 +51,43 @@ app.controller('gameCtrl',function ($scope,$http) {
     gameDetail.error(function (data,status) {
         console.log('获取游戏信息出错')
     })
+
+    //获取到tocken
+    var promise=$http({
+        method:'get',
+        url:tokenUrl,
+        type:'text',
+        params:data
+    });
+    promise.success(function (data,status,config,headers) {
+        if(status && status==200){
+            token=data;
+            console.log(token)
+        }
+        var data={
+            token:token
+        };
+        var promiseAdd=$http({
+            method:'get',
+            url:addUrl,
+            type:'text',
+            params:data
+        });
+        promiseAdd.success(function (data,status,config,headers) {
+            if(status && status==200){
+                console.log(data);
+                console.log('数据计入成功')
+            }
+        });
+        promiseAdd.error(function (data,status,hedaers,config) {
+            console.log('数据计入失败')
+        })
+    });
+
+    promise.error(function(data,status,hedaers,config){
+        console.log('获取token出错')
+    });
+
+
+
 })

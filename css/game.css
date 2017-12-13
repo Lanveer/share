@@ -18,7 +18,7 @@
 }
 .game-box{
     width:84%;
-    height:auto;
+    height:300px;
     margin:15pt auto;
     overflow: hidden;
 }

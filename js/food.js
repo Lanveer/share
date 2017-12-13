@@ -15,16 +15,16 @@ str =url;
 re = getQueryString(str);
 var data={
     food_id:re.food_id,
-    type:1,
+    // type:1,
     user_id:re.user_id,
     lng:re.lng,
     lat:re.lat,
     auth_name:re.auth_name,
     tx:re.tx
 };
-
+//
 // var data={
-//     food_id:1549,
+//     food_id:1553,
 //     // type:1,
 //     user_id:1397,
 //     lng:104.068136,

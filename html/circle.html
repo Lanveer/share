@@ -33,7 +33,7 @@
             <div class="info circle-info">
                 <h1 ng-bind="msg.nickname" style="margin-bottom: 5px;"></h1>
                 <img ng-if="msg.sex==1" src="../imgs/common/boy.png" alt="">
-                <img ng-if="msg.sex==0" src="../imgs/common/girl.png" alt="">
+                <img ng-if="msg.sex==2" src="../imgs/common/girl.png" alt="">
                 <span ng-bind="msg.address"></span>
             </div>
             <span ng-bind="msg.create_time" class="circle-date"></span>
@@ -46,7 +46,7 @@
         <!--浏览信息开始-->
          <div class="browse-info" style="border-top: none;height: 30pt;">
              <div class="icons">
-                 <span class="circle-praise" ng-bind="msg.did_praised"> 12</span>
+                 <span class="circle-praise" ng-bind="msg.praise"> 12</span>
                  <span class="circle-msg" ng-bind="msg.comment_num">12</span>
              </div>
 

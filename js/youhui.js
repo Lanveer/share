@@ -62,7 +62,6 @@ $('.add,#header>img').click(function(){
 
 var app= angular.module('myApp',[]);
 app.controller('myCtrl',function ($scope,$http) {
-
     //获取到tocken
     var promise=$http({
         method:'get',
