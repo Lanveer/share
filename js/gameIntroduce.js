@@ -15,19 +15,24 @@ $('.btn').click(function(){
         // window.location.href='https://jglist.onelink.me/1789171185';
     }
 });
-
 //详情url
-var detailUrl= baseUrl+'game/game/shopgame';
-
+var detailUrl= baseUrl+'game/game/introducecontent';
 var data={
-    // food_id:re.food_id,
     auth_name:re.auth_name,
     tx:re.tx,
-    food_id:re.privilege_id
+    shop_game_id:re.shop_game_id
 }
+
+// var data={
+//     shop_game_id:7,
+//     auth_name:'name',
+//     name:1,
+//     tx:'3f556f66353c5945a3633ae209a3e0ff'
+// }
 
 var app= angular.module('myApp',[]);
 app.controller('gameCtrl',function ($scope,$http) {
+    $scope.url='../game/preview.php?shopGameId='+data.food_id+'';
     var gameDetail=$http({
         method:'get',
         url:detailUrl,

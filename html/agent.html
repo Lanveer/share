@@ -26,13 +26,14 @@
 
     <!--版块开始-->
     <div class="section first-section">
-        <div class="sj-left"><img src="{{msg.license}}{{prefixed}}" alt=""></div>
+        <!--<div class="sj-left"><img src="{{msg.license}}{{prefixed}}" alt=""></div>-->
+        <div class="sj-left"><img src="{{msg.header}}" alt=""></div>
          <div class="sj-right">
              <div>
                  <h1 ng-bind="msg.zh_name"></h1>
-                 <img ng-if="msg.status==0" src="../imgs/common/v0.png" alt="">
-                 <img ng-if="msg.status==1" src="../imgs/common/v1.png" alt="">
-                 <img ng-if="msg.status==2" src="../imgs/common/v2.png" alt="">
+                 <!--<img ng-if="msg.status==0" src="../imgs/common/v0.png" alt="">-->
+                 <img ng-if="msg.status==1" src="../imgs/common/v0.png" alt="">
+                 <img ng-if="msg.status==2" src="../imgs/common/v1.png" alt="">
              </div>
 
              <h2 ng-bind="msg.en_name"></h2>

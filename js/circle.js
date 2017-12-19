@@ -9,21 +9,21 @@ var commentUrl=baseUrl+'circle/circle/commentslist';
 url = window.location.href;
 str =url;
 re = getQueryString(str);
-var data={
-    user_id:re.user_id,
-    circle_id:re.circle_id,
-    auth_name:re.auth_name,
-    tx:re.tx
-};
-
-
 // var data={
-//     circle_id:2702,
-//     user_id:1402,
-//     auth_name:'name',
-//     name:1,
-//     tx:'3f556f66353c5945a3633ae209a3e0ff'
+//     user_id:re.user_id,
+//     circle_id:re.circle_id,
+//     auth_name:re.auth_name,
+//     tx:re.tx
 // };
+
+
+var data={
+    circle_id:2736,
+    user_id:1385,
+    auth_name:'name',
+    name:1,
+    tx:'3f556f66353c5945a3633ae209a3e0ff'
+};
 
 // 判断下载设备
 $('#header,.download-tips').click(function(){
@@ -91,15 +91,16 @@ app.controller('commentCtrl',function ($scope,$http) {
         if(commentLength!=0){
             $scope.flag=1;
             $scope.commentList=commentList;
+        }else{
+            $scope.flag=0;
         }
-        if(commentLength>=2){
+        if(commentLength>=3){
             $scope.commentList=commentList.slice(0,3);
             $scope.flag=1;
         }else if(commentLength<1){
             $scope.flag=0;
         }else if(commentLength==1){
             $scope.commentList=commentList;
-            $scope.flag=0;
         }
     })
 

@@ -111,12 +111,17 @@ app.controller('commentCtrl',function ($scope,$http) {
             if(commentLength!=0){
                 $scope.flag=1;
                 $scope.commentList=lists;
+            }else{
+                $scope.flag=0;
             }
             if(commentLength>=3){
                 var lists=data.data.slice(0,3);
                 $scope.commentList=lists;
             }else if(commentLength<1){
                 $scope.flag=0;
+            }
+            else if(commentLength==1){
+                $scope.commentList=lists;
             }
             console.log(lists)
         }

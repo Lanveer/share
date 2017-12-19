@@ -19,7 +19,13 @@
 </head>
 <body>
 <div class="container">
-    <div class="sec">
+
+    <!--头部开始-->
+    <div id="header">
+        <img src="../imgs/common/navigation.png" alt="">
+    </div>
+    <!--头部开始-->
+    <div class="sec" style="padding-top: 55pt;">
         <img src="../imgs/promotion/promotion_one.png" alt="">
     </div>
     <div class="sec">
@@ -39,4 +45,31 @@
  
 
 </body>
+<script src="../libs/jquery.min.js"></script>
+<script src="../js/basic.js"></script>
+<script>
+    $('#header,.download-tips,.telephone').click(function(){
+        var ua = navigator.userAgent.toLowerCase();
+        if (/iphone|ipad|ipod/.test(ua)) {
+            console.log('ios')
+            window.location.href=downLoadUrl;
+        } else if (/android/.test(ua)) {
+            console.log('android')
+            window.location.href=downLoadUrl;
+        }
+    });
+    //判断显示那一部分
+    (function checkDevice() {
+        var ua = navigator.userAgent.toLowerCase();
+        if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+            //在微信中
+            $('#header').hide();
+            $('.pinglun').hide()
+            $('.w-header').show();
+            $('.w-footer').show();
+        }else{
+            // 在其他浏览器中
+        }
+    })();
+</script>
 </html>

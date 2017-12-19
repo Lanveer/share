@@ -106,7 +106,6 @@ app.controller('commentCtrl',function ($scope,$http) {
             $scope.flag=0;
         }else if(commentLength==1){
             $scope.commentList=commentList;
-            $scope.flag=0;
         }
     })
 });

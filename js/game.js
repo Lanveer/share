@@ -17,7 +17,7 @@ $('.btn').click(function(){
 });
 
 //详情url
-var detailUrl= baseUrl+'game/game/shopgame';
+var detailUrl= baseUrl+'game/game/introducecontent';
 //tokenUrl
 var tokenUrl= baseUrl+'newprivilege/privilege/token';
 
@@ -28,13 +28,28 @@ str =url;
 re = getQueryString(str);
 
 var data={
-    food_id:re.food_id,
+    shop_game_id:re.shop_game_id,
     auth_name:re.auth_name,
     tx:re.tx
 }
 
+// var data={
+//     shop_game_id:7,
+//     auth_name:'name',
+//     name:1,
+//     tx:'3f556f66353c5945a3633ae209a3e0ff'
+// }
+
+
+
+
 var app= angular.module('myApp',[]);
 app.controller('gameCtrl',function ($scope,$http) {
+    $scope.shopGameId=data.food_id;
+    var gameUrl='../game/preview.php?shopGameId='+data.food_id+'';
+    var frame='';
+    frame+="<iframe style='height: 400px;' src='"+gameUrl+"'  frameborder='0'></iframe>"
+    $('.game-box').append(frame);
     var gameDetail=$http({
         method:'get',
         url:detailUrl,
@@ -62,7 +77,6 @@ app.controller('gameCtrl',function ($scope,$http) {
     promise.success(function (data,status,config,headers) {
         if(status && status==200){
             token=data;
-            console.log(token)
         }
         var data={
             token:token
