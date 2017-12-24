@@ -28,7 +28,7 @@
     <div class="section first-section job-first-section">
         <h1 ng-bind="msg.title"></h1>
         <h2 ng-bind="'电议'" ng-if="msg.price=='0.00' "></h2>
-        <h2 ng-bind="'$'+msg.price+'/每月'" ng-if="msg.price!='0.00' "></h2>
+        <h2 ng-bind="'$'+msg.price+'/月'" ng-if="msg.price!='0.00' "></h2>
         <div class="job-head">
             <span ng-bind="'更新:'+msg.create_time"></span>
             <h1 ng-bind=" '浏览'+ msg.browse"></h1>

@@ -8,7 +8,7 @@ $('.btn').click(function(){
     if (/iphone|ipad|ipod/.test(ua)) {
         console.log('ios')
         window.location.href=downLoadUrl;
-        // window.location.href='https://jglist.onelink.me/1789171185';
+        // window.location.href='https://jglist.onelink.me/1789171185 ';
     } else if (/android/.test(ua)) {
         console.log('android')
         window.location.href=downLoadUrl;
@@ -33,20 +33,11 @@ var data={
     tx:re.tx
 }
 
-// var data={
-//     shop_game_id:7,
-//     auth_name:'name',
-//     name:1,
-//     tx:'3f556f66353c5945a3633ae209a3e0ff'
-// }
-
-
-
 
 var app= angular.module('myApp',[]);
 app.controller('gameCtrl',function ($scope,$http) {
     $scope.shopGameId=data.food_id;
-    var gameUrl='../game/preview.php?shopGameId='+data.food_id+'';
+    var gameUrl='https://time2.jglist.com/index.php?r=game/game/preview&shop_game_id='+data.food_id+'';
     var frame='';
     frame+="<iframe style='height: 400px;' src='"+gameUrl+"'  frameborder='0'></iframe>"
     $('.game-box').append(frame);

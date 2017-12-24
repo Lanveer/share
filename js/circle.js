@@ -9,21 +9,21 @@ var commentUrl=baseUrl+'circle/circle/commentslist';
 url = window.location.href;
 str =url;
 re = getQueryString(str);
-// var data={
-//     user_id:re.user_id,
-//     circle_id:re.circle_id,
-//     auth_name:re.auth_name,
-//     tx:re.tx
-// };
-
-
 var data={
-    circle_id:2736,
-    user_id:1385,
-    auth_name:'name',
-    name:1,
-    tx:'3f556f66353c5945a3633ae209a3e0ff'
+    user_id:re.user_id,
+    circle_id:re.circle_id,
+    auth_name:re.auth_name,
+    tx:re.tx
 };
+
+
+// var data={
+//     circle_id:2736,
+//     user_id:1385,
+//     auth_name:'name',
+//     name:1,
+//     tx:'3f556f66353c5945a3633ae209a3e0ff'
+// };
 
 // 判断下载设备
 $('#header,.download-tips').click(function(){
@@ -47,8 +47,12 @@ $('#header,.download-tips').click(function(){
         $('.pinglun').hide()
         $('.w-header').show();
         $('.w-footer').show();
-    }else{
-        // 在其他浏览器中
+    }else if( ua.match(/WeiBo/i) == "weibo"){
+        $('#header').hide();
+        $('#footer').hide();
+        $('.pinglun').hide();
+        $('.w-header').show();
+        $('.w-footer').show();
     }
 })();
 

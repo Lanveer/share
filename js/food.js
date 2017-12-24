@@ -56,8 +56,12 @@ $('#header,.download-tips').click(function(){
         $('.pinglun').hide()
         $('.w-header').show();
         $('.w-footer').show();
-    }else{
-        // 在其他浏览器中
+    }else if( ua.match(/WeiBo/i) == "weibo"){
+        $('#header').hide();
+        $('#footer').hide();
+        $('.pinglun').hide();
+        $('.w-header').show();
+        $('.w-footer').show();
     }
 })();
 
@@ -77,6 +81,83 @@ app.controller('foodCtrl',function ($scope,$http) {
             $scope.msg=msg;
             $scope.prefixed='800_600.jpg';
             $scope.icon_prefixed='200_200.jpg';
+            //    判断营业时间
+            var day = new Date().getDay(); //4
+            var hour=new Date().getHours();
+            var min=new Date().getMinutes();
+            var time=hour+':'+min;
+            $scope.realWeek=day
+            $scope.time=time;
+
+            switch (parseInt(day)){
+                case 0:
+                    $scope.week='0';
+                    var open=msg.open;
+                    angular.forEach(open,function (a,b) {
+                        if(time<a.second_end && time>a.second_start || time<a.first_end && time>a.first_start){
+                            $scope.is_close=true;
+                        }else{
+                            $scope.is_close=false
+                        }
+                    })
+                    break;
+                case 1:
+                    $scope.week='1';
+                    var open=msg.open;
+                    angular.forEach(open,function (a,b) {
+                        if(time<a.second_end && time>a.second_start || time<a.first_end && time>a.first_start){
+                            $scope.is_close=true;
+                        }else{
+                            $scope.is_close=false
+                        }
+                    })
+                    break;
+                case 2:
+                    $scope.week='2';
+                    var open=msg.open;
+                    angular.forEach(open,function (a,b) {
+                        if(time<a.second_end && time>a.second_start || time<a.first_end && time>a.first_start){
+                            $scope.is_close=true;
+                        }else{
+                            $scope.is_close=false
+                        }
+                    })
+                    break;
+                case 4:
+                    $scope.week='4';
+                    var open=msg.open;
+                    angular.forEach(open,function (a,b) {
+                        if(time<a.second_end && time>a.second_start || time<a.first_end && time>a.first_start){
+                            console.log('open')
+                            $scope.is_close=true;
+                        }else{
+                            console.log('close')
+                            $scope.is_close=false
+                        }
+                    })
+                    break;
+                case 5:
+                    var open=msg.open;
+                    angular.forEach(open,function (a,b) {
+                        if(time<a.second_end && time>a.second_start || time<a.first_end && time>a.first_start){
+                            $scope.is_close=true;
+                        }else{
+                            $scope.is_close=false
+                        }
+                    })
+                    break;
+                case 6:
+                    $scope.week='6';
+                    var open=msg.open;
+                    angular.forEach(open,function (a,b) {
+                        if(time<a.second_end && time>a.second_start || time<a.first_end && time>a.first_start){
+                            $scope.is_close=true;
+                        }else{
+                            $scope.is_close=false
+                        }
+                    })
+                    break;
+            }
         }
     });
     promise.error(function (data,ststus) {

@@ -35,7 +35,8 @@
                 <!--<span>{{msg.city}} {{msg.area}}</span>-->
                 <span>{{msg.address}}</span>
             </div>
-            <div class="price" ng-bind="'$'+msg.price"></div>
+            <div class="price" ng-bind="电议" ng-if="msg.price=='0.00'"></div>
+            <div class="price" ng-bind="msg.price" ng-if="msg.price！='0.00'"></div>
         </div>
         <p ng-bind="msg.introduce"></p>
         <div class="img-box" ng-repeat="item in imgs">

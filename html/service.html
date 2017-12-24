@@ -115,17 +115,26 @@
             <h1> 电话 <span ng-bind="msg.tel" style="color: #00d1b2;"></span></h1>
             <span style="color: #31aefe" class="telephone">拨打电话</span>
         </div>
-        <div class="item">
-            <h1> 时间
-                <!--<span ng-bind="msg.open[0].first_start+ '-'+ msg.open[0].first_end + '&nbsp;' + msg.open[0].second_start+ '-'+ msg.open[0].second_end" ></span>-->
-                <span ng-repeat="tm in msg.open">
-                    {{tm.first_start}}-{{tm.first_end}}
-                    {{tm.second_start}}-{{tm.second_end}}
-                </span>
-            </h1>
-            <span ng-if="msg.open[0].is_close==0">歇业中</span>
-            <span ng-if="msg.open[0].is_close!=0">营业中</span>
+        <!--营业时间开始-->
+        <div class="opentime">
+            <h1>时间</h1>
+            <div>
+                <p ng-repeat="tm in msg.open">{{tm.first_start}}-{{tm.first_end}} {{tm.second_start}}-{{tm.second_end}}
+                    <i ng-if="tm.week==0" >周日 </i>
+                    <i ng-if="tm.week==1" >周一</i>
+                    <i ng-if="tm.week==2" >周二</i>
+                    <i ng-if="tm.week==3" >周三</i>
+                    <i ng-if="tm.week==4" >周四</i>
+                    <i ng-if="tm.week==5" >周五</i>
+                    <i ng-if="tm.week==6" >周六</i>
+                </p>
+            </div>
+            <span ng-if="is_close && week==realWeek" class="open">营业中</span>
+            <span ng-if="!is_close || week != realWeek" class="close">歇业中</span>
         </div>
+        <!--营业时间结束-->
+
+
         <div class="item">
             <h1> 地址 <span ng-bind="msg.address"></span></h1>
         </div>

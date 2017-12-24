@@ -361,6 +361,7 @@ ul>li{
     vertical-align:middle;
     margin-bottom: 10pt;
     color: #666666;
+    position: relative;
 }
 .item>h1{
     font-size: 10pt;
@@ -368,14 +369,55 @@ ul>li{
     font-weight:normal;
     margin-left: 13pt;
 }
-.item>h1>span{
+.item>h1>p{
     color: #999;
     margin-left: 10px;
+}
+.item>h1>span{
+    margin-left: 5px;
 }
 .item>span{
     color:#00d1b2;
     margin-right: 13pt;
     font-size: 10pt;
+    /*position: absolute;*/
+    /*right:13pt;*/
+}
+.opentime{
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    vertical-align:middle;
+    margin-bottom: 10pt;
+    color: #666666;
+    position: relative;
+}
+.opentime>h1{
+    font-size: 10pt;
+    color:#666666;
+    font-weight:normal;
+    margin-left: 13pt;
+}
+.opentime p{
+    padding:0 10px 10px 10px!important;
+}
+.opentime>div>p:first-child{
+    margin-top: 10px;
+}
+.opentime>div>p>i{
+     font-size: 9pt;
+}
+.open{
+    color:#00d1b2;
+    font-size: 10pt;
+    position: absolute;
+    right:13pt;
+}
+.close{
+    color: red;
+    font-size: 10pt;
+    position: absolute;
+    right:13pt;
 }
 
 .comment{

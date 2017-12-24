@@ -21,7 +21,7 @@ var data={
 };
 
 // var data={
-//     id:7211,
+//     id:7213,
 //     grand_id:3,
 //     user_id:1403,
 //     auth_name:'name',
@@ -53,9 +53,12 @@ $('#header,#footer').click(function(){
         $('#footer').hide();
         $('.w-header').show();
         $('.w-footer').show();
-    }else{
-        // 在其他浏览器中
-
+    }else if( ua.match(/WeiBo/i) == "weibo"){
+        $('#header').hide();
+        $('#footer').hide();
+        $('.pinglun').hide();
+        $('.w-header').show();
+        $('.w-footer').show();
     }
 })();
 
@@ -98,17 +101,18 @@ app.controller('commentCtrl',function ($scope,$http) {
     wantPromise.success(function (data,status) {
         if(status && status==200){
             var lists=data.data;
-            $scope.commentLength= lists.length;
             var commentLength=lists.length;
             if(commentLength!=0){
                 $scope.flag=1;
                 $scope.commentList=lists;
+                $scope.commentLength=lists[0].total_count;
             }
             if(commentLength>3){
                 var lists=data.data.slice(0,3);
                 $scope.commentList=lists;
             }else if(commentLength<1){
                 $scope.flag=0;
+                $scope.commentLength=0
             }
         }
     })

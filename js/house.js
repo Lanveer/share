@@ -54,8 +54,12 @@ $('#footer,#header').click(function(){
         $('.pinglun').hide();
         $('.w-header').show();
         $('.w-footer').show();
-    }else{
-        // 在其他浏览器中
+    }else if( ua.match(/WeiBo/i) == "weibo"){
+        $('#header').hide();
+        $('#footer').hide();
+        $('.pinglun').hide();
+        $('.w-header').show();
+        $('.w-footer').show();
     }
 })();
 
