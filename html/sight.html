@@ -30,7 +30,8 @@
             <img src="{{msg.image}}{{prefixed}}" alt="">
             <div class="ban">
                 <div>
-                    <div class="ban-top">${{msg.price}}</div>
+                    <div class="ban-top" ng-if="msg.price!='0.00' " ng-bind="'$'+msg.price"></div>
+                    <div class="ban-top" ng-if="msg.price=='0.00' " ng-bind="暂无"></div>
                     <div class="ban-down">人均消费</div>
                 </div>
                 <h1>共{{msg.img_count}}张</h1>
