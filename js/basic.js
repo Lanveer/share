@@ -3,9 +3,9 @@
  */
 
 //测试服务器
-var baseUrl='http://106.14.56.22:9529/index.php?r='
+// var baseUrl='http://106.14.56.22:9529/html.php?r='
 //正式服务器
-// var baseUrl='http://54.161.25.252/index.php?r=';
+var baseUrl='http://54.161.25.252/index.php?r=';
 
 //下载地址
 var downLoadUrl='https://jglist.onelink.me/1789171185?pid=shareH5';

@@ -37,7 +37,7 @@ var data={
 var app= angular.module('myApp',[]);
 app.controller('gameCtrl',function ($scope,$http) {
     $scope.shopGameId=data.food_id;
-    var gameUrl='https://time2.jglist.com/index.php?r=game/game/preview&shop_game_id='+data.food_id+'';
+    var gameUrl='https://time2.jglist.com/html.php?r=game/game/preview&shop_game_id='+data.food_id+'';
     var frame='';
     frame+="<iframe style='height: 400px;' src='"+gameUrl+"'  frameborder='0'></iframe>"
     $('.game-box').append(frame);

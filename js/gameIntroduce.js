@@ -25,7 +25,7 @@ var data={
 
 var app= angular.module('myApp',[]);
 app.controller('gameCtrl',function ($scope,$http) {
-    var gameUrl='https://time2.jglist.com/index.php?r=game/game/introduce&auth_name=id&id=1&tx=3f556f66353c5945a3633ae209a3e0ff&shop_game_id='+data.shop_game_id+'';
+    var gameUrl='https://time2.jglist.com/html.php?r=game/game/introduce&auth_name=id&id=1&tx=3f556f66353c5945a3633ae209a3e0ff&shop_game_id='+data.shop_game_id+'';
     var frame='';
     frame+="<iframe style='height: 400px;' src='"+gameUrl+"'  frameborder='0'></iframe>"
     $('.game-box').append(frame);

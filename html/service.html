@@ -29,7 +29,8 @@
         <div class="img-container">
             <img src="{{msg.image}}{{prefixed}}" alt="">
             <div class="ban">
-                <div style="height: 20pt">查看商家</div>
+                <div style="height: 20pt" ng-if="msg.merchant_id==0 || msg.is_google==1">认领店铺</div>
+                <div style="height: 20pt" ng-if="msg.merchant_id!=0 || msg.is_google!=1">查看商家</div>
                 <h1 ng-bind="'共'+msg.mci_count+'张'"></h1>
             </div>
         </div>
@@ -37,8 +38,8 @@
 
         <div class="ban-box">
             <div>
-                <h1 ng-bind="msg.zh_name"></h1>
-                <h2 ng-bind="msg.en_name"></h2>
+                <h1 ng-bind="msg.zh_name.length>20?msg.zh_name.substring(0,20)+'..':msg.zh_name"></h1>
+                <h2 ng-bind="msg.en_name.length>20?msg.en_name.substring(0,20)+'..':msg.en_name"></h2>
             </div>
             <!--<img src="{{msg.qrcode}}" alt="">-->
             <img src="../imgs/service/erweima.png" alt="">

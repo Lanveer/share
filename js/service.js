@@ -19,7 +19,7 @@ var data={
     tx:re.tx
 };
 // var data={
-//     shop_id:28,
+//     shop_id:4,
 //     user_id:1397,
 //     lng:103.068135,
 //     lat:30.546968,
